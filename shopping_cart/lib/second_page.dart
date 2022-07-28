@@ -13,36 +13,34 @@ class SecondPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFfefcff),
-      body: Container(
+      body: SizedBox(
           width: double.maxFinite,
           height: double.maxFinite,
           child:Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Flexible(
-                child: Container(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
 
-                      Consumer<DataClass>(builder: (context, data, child){
-                        return Text('${data.x}', style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                        ),);
-                      }),
-                      const Text(
-                        "-- Total",
-                        style: TextStyle(
-                            fontSize: 40,
-                            fontWeight: FontWeight.bold
-                        ),
+                    Consumer<DataClass>(builder: (context, data, child){
+                      return Text('${data.x}', style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      ),);
+                    }),
+                    const Text(
+                      "Total",
+                      style: TextStyle(
+                          fontSize: 40,
+                          fontWeight: FontWeight.bold
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
-              SizedBox(height: 100,),
+              const SizedBox(height: 100,),
               Container(
 
                 width: double.maxFinite,
@@ -55,14 +53,14 @@ class SecondPage extends StatelessWidget {
                            Get.snackbar("Item", "Can not decrease more",
                             backgroundColor: Colors.black,
                              colorText: Colors.white,
-                             titleText: Text(
+                             titleText: const Text(
                                "Item",
                                style: TextStyle(
                                  fontSize: 40,
                                  color: Colors.white
                                ),
                              ),
-                             messageText: Text(
+                             messageText: const Text(
                                "Can not reduce more",
                                style: TextStyle(
                                    fontSize: 20,
@@ -77,7 +75,6 @@ class SecondPage extends StatelessWidget {
                         child: Container(
                           height:60,
                           width: 60,
-                          child: const Icon(Icons.remove),
                           decoration: BoxDecoration(
 
                             borderRadius: BorderRadius.circular(10),
@@ -86,14 +83,21 @@ class SecondPage extends StatelessWidget {
                               color: const Color(0xFF716f72)
                             )
                           ),
+                          child: const Icon(Icons.remove),
                         ),
                       ),
                     const SizedBox(width: 20,),
                     Flexible(child:  Container(
                       padding: const EdgeInsets.only(left: 20, right: 20),
+                      height:60,
+                      width: double.maxFinite,
+                      decoration: BoxDecoration(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
                       child: GestureDetector(
                         onTap: (){
-                          Get.to(()=>HomePage(), transition: Transition.downToUp, duration: const Duration(seconds: 1));
+                          Get.to(()=>const HomePage(), transition: Transition.downToUp, duration: const Duration(seconds: 1));
                         },
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -104,12 +108,6 @@ class SecondPage extends StatelessWidget {
                             ),),
                           ],
                         ),
-                      ),
-                      height:60,
-                      width: double.maxFinite,
-                      decoration: BoxDecoration(
-                        color: Colors.black,
-                        borderRadius: BorderRadius.circular(10),
                       ),
                     ),)
                   ],
