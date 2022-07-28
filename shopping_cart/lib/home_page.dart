@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
+import 'package:shopping_cart/second_page.dart';
 
 import 'data_class.dart';
 
@@ -89,7 +90,7 @@ class HomePage extends StatelessWidget {
                       children: [
                         GestureDetector(
                             onTap: (){
-                              // Get.to(()=>SecondPage(), transition: Transition.upToDown, duration: Duration(seconds: 1));
+                              Get.to(()=>SecondPage(), transition: Transition.upToDown, duration: Duration(seconds: 1));
                             },
                             child: Text("Next Page", style: TextStyle(fontSize: 20, color: Colors.white),)),
                         Spacer(),
